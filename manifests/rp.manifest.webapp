@@ -1,0 +1,4 @@
+{
+  "name": "My Example Relying Party",
+  "onAuthenticationURL": "/signin/success"
+}

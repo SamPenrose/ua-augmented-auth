@@ -1,0 +1,4 @@
+{
+  "name": "My Identity Provider",
+  "signOutURI": "https://provider.example.com/signout"
+}
