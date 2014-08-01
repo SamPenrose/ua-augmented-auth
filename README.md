@@ -34,3 +34,11 @@ Glossary
   * Authorization
   * Federation
   * Relying Party
+
+Contributors
+------------
+
+  @ianb
+  @CKarlof
+  @sicking
+  @SamPenrose
