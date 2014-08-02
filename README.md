@@ -12,6 +12,10 @@ We welcome feedback on the following broad concepts, sample user experiences, an
 Starting Points
 ---------------
 
+  * We're interested in integrating with the credentials management proposals here:
+
+    - http://projects.mikewest.org/credentialmanagement/usecases/
+
   * "Augment" means "improve by supplementing", not "replace."
   * Oauth2 is our first model protocol.
   * We could use second and third model protocols.
