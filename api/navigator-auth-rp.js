@@ -10,6 +10,8 @@
  * logged into the User Agent.
  *
  * @param authURLs:
+ *        XXX we need to supply a query string for each authURL
+ *            which means this is wrong. FIXME
  *    An array of URLs mapping to IdPs supported by the calling RP.
  *    Must be non-empty. Maybe support degenerate case of single string.
  * @param returnURL:
@@ -19,6 +21,7 @@
  *    where queryString is an opaque, possibly-empty IdP-specific blob
  *    that the IdP may require the RP to use to manage authentication state.
  */
+
 navigator.auth.authenticate = function(authURLs, returnURL) {
   if (typeof(authURLs) == 'string') {
     authURLs = [authURLs];
