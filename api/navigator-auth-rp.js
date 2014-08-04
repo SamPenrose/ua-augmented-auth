@@ -17,12 +17,17 @@
  * @param returnURL:
  *    where the IdP will redirect the User Agent to. Upon authentication,
  *    the User Agent will send:
- *      GET <RP origin>/returnURL?<queryString>
+ *      GET <RP origin>/returnURL#<queryString>
  *    where queryString is an opaque, possibly-empty IdP-specific blob
- *    that the IdP may require the RP to use to manage authentication state.
+ *    that the IdP may require the RP to use to manage authentication state,
+ *    such as an Oauth2 token.
+ * @param interactive:
+ *    Optional boolean, defaulting to true.
+ *    If false, the call won't surface login screens or otherwise affect UX.
+ *      XXX on failure, do we get a callback will null, or silence?
  */
 
-navigator.auth.authenticate = function(authURLs, returnURL) {
+navigator.auth.authenticate = function(authURLs, returnURL, interactive=true) {
   if (typeof(authURLs) == 'string') {
     authURLs = [authURLs];
   }
