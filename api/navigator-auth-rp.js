@@ -5,35 +5,19 @@
  */
 
 /**
- * Return a possibly empty array of objects representing accounts with
- * the Identity Provider at the current page's origin that are currently
- * logged into the User Agent.
+ * Request authentication with one or more Identity Providers.
  *
- * @param authURLs:
- *        XXX we need to supply a query string for each authURL
- *            which means this is wrong. FIXME
- *    An array of URLs mapping to IdPs supported by the calling RP.
- *    Must be non-empty. Maybe support degenerate case of single string.
- * @param returnURL:
- *    where the IdP will redirect the User Agent to. Upon authentication,
- *    the User Agent will send:
- *      GET <RP origin>/returnURL#<queryString>
- *    where queryString is an opaque, possibly-empty IdP-specific blob
- *    that the IdP may require the RP to use to manage authentication state,
- *    such as an Oauth2 token.
- * @param interactive:
- *    Optional boolean, defaulting to true.
- *    If false, the call won't surface login screens or otherwise affect UX.
- *      XXX on failure, do we get a callback will null, or silence?
+ * @param providerOne:
+ *   {authURL: string <URL to IdP access point, with necessary parameters in query string>,
+ *    returnURL: string <URL to which user agent will be sent on success>,
+ *    interactive: optional bool specifying whether to open UX if the user is not signed in, default true}
+ * @param providerTwo (and additional parameters):
+ *    If the RP passes in more than one object of the form specified above
+ *    in providerOne, the User Agent may attempt to sign the user in with
+ *    any of the IdPs, either silently or via a picker UI.
+ * @return:
+ *    null
  */
 
-navigator.auth.authenticate = function(authURLs, returnURL, interactive=true) {
-  if (typeof(authURLs) == 'string') {
-    authURLs = [authURLs];
-  }
-  // Surface UI allowing user to pick one of the IdPs to authenticate with.
-  // User Agent then follows IdP-specific authentication protocol,
-  // such as opening authURL in a new frame. It might augment authentication
-  // in other ways; for example if the user has more than one account with
-  // an IdP, this would be the time to offer a picker.
+navigator.auth.authenticate = function(providerOne, providerTwo=null, ...) {
 }
