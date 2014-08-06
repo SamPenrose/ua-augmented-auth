@@ -1,7 +1,7 @@
 /**
  * Example API for Identity Providers.
  *
- * getAccounts() and setAccount() can be thought of as augmenting
+ * getAccounts() and addAccount() can be thought of as augmenting
  * the reading and writing of cookies holding userids and other
  * state for an account.
  *
@@ -37,6 +37,7 @@ navigator.auth.addAccount = function(accountObject) {
  *   if (accounts.length !== keeping.length + 1) {
  *     throw new Error("Bad key or value specifying account to delete.");
  *   }
+ *   navigator.auth._accounts = keeping;
  */
 navigator.auth.deleteAccount = function(accountIdPropertyName, accountIdValue) {
 }
