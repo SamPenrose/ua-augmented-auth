@@ -17,6 +17,8 @@ Define APIs and provide model implementations which allow:
   - RPs to take advantage of SSO with minimal overhead;
   - and IdPs to take advantage of SSO on non-browser User Agents.
 
+Please see the initial efforts in api/ .
+
 Important Details
 -----------------
 
