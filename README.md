@@ -9,8 +9,19 @@ People who use the Web need to establish identities and control how they are exp
 
 We welcome feedback on the following broad concepts, sample user experiences, and API proposals for giving people better control of the federation of their online identities.
 
-Starting Points
----------------
+Initial Target
+--------------
+Define APIs and provide model implementations which allow:
+
+  - people to understand and control how their identities are exposed on the web;
+
+    + example non-Web UX which address this need: Android Account Manager
+
+  - RPs to take advantage of SSO with minimal overhead;
+  - and IdPs to take advantage of SSO on non-browser User Agents.
+
+Important Details
+-----------------
 
   * We're interested in integrating with the credentials management proposals here:
     + http://projects.mikewest.org/credentialmanagement/usecases/
