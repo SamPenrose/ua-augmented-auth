@@ -13,10 +13,7 @@ Initial Target
 --------------
 Define APIs and provide model implementations which allow:
 
-  - people to understand and control how their identities are exposed on the web;
-
-    + example non-Web UX which address this need: Android Account Manager
-
+  - people to understand and control how their identities are exposed on the web with User Agent UIs;
   - RPs to take advantage of SSO with minimal overhead;
   - and IdPs to take advantage of SSO on non-browser User Agents.
 
@@ -28,8 +25,8 @@ Important Details
   * "Augment" means "improve by supplementing", not "replace."
   * Oauth2 is our first model protocol.
   * We could use second and third model protocols.
-  * Mediation APIs we provide should "fit" those protocols.
-    + Protocol implementations MAY ask the User Agent if it offers a Mediation API.
+  * Augmentation APIs we provide should "fit" those protocols.
+    + Protocol implementations MAY ask the User Agent if it offers an Augmentation API.
       - If the implementation does not ask, it should not incur any cost.
     + The API should not require significantly restructuring existing protocol implementations.
   * User Agents include:
