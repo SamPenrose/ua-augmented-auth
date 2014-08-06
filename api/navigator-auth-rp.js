@@ -5,12 +5,26 @@
  */
 
 /**
- * Request authentication with one or more Identity Providers.
+ * Request authentication with one or more Identity Providers, as specified
+ * by authURL parameters; on success, the User Agent will <load> returnURL.
  *
  * @param providerOne:
- *   {authURL: string <URL to IdP access point, with necessary parameters in query string>,
- *    returnURL: string <URL to which user agent will be sent on success>,
- *    interactive: optional bool specifying whether to open UX if the user is not signed in, default true}
+ *   {authURL: string,
+ *    returnURL: string,
+ *    interactive: optional bool, default true}
+ * 
+ * authURL: should resolve to an IdP's access point, and include any
+ * necessary parameters in the queryString (such as an Oauth2 clientID)
+ *
+ * returnURL: must have the same origin as the RP, and may contain an
+ * IdP-specific blob; such as a trailing '#authToken=<authToken'.
+ * The RP is responsible to know how to handle IdP return values.
+ *
+ * interactive: if false, the User Agent guarantees it will not surface
+ * UI in response to the request. The User Agent should make best effort to
+ * allow sign in if appropriate (i.e. the user has previously granted
+ * access to this IdP for this RP).
+ * 
  * @param providerTwo (and additional parameters):
  *    If the RP passes in more than one object of the form specified above
  *    in providerOne, the User Agent may attempt to sign the user in with
