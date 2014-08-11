@@ -10,19 +10,20 @@ A wide range of Identity Providers support the Oauth protocol for authentication
 
 Initial Target
 --------------
-Define APIs and provide model implementations which allow:
+We will define APIs and provide model implementations which allow:
 
   - Single Sign On:
     As a person using a web app which supports sign-on with a given Identity Provider, if I am already signed in with that Provider via another web app, I want to be offered the option to sign in without having to re-enter my credentials, and the option to prevent the sign in.
   - Understanding and Control:
     As a person who accesses multiple Identity Providers and Relying Parties, I want my User Agent to show me with which of them I am authenticated, and to provide controls I can use to ask them to revoke my authentication credentials.
 
-Please see the initial efforts in api/ .
+Please see the examples in api/ .
 
 Prior Art
 ---------
-Google Chrome Identity API for web apps: https://developer.chrome.com/apps/identity#method-launchWebAuthFlow
-Facebook Connect: https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow/v2.1
+
+* Google Chrome Identity API for web apps: https://developer.chrome.com/apps/identity#method-launchWebAuthFlow
+* Facebook Connect: https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow/v2.1
 
 Glossary
 --------
@@ -31,7 +32,7 @@ Glossary
     + Traditional web browsers, meant to run inside a personal computer operating system and accept input from a keyboard and pointing device.
     + Smartphone applications, including general-purpose web browsers, with inferior-to-PC text input and other important usability differences from the PC browser model.
     + Smartphone operating systems such as FirefoxOS.
-  * Identity Provider: services which provide people with unique names on the Internet
+  * Identity Provider: services which provide people with unique names on the Internet.
   * Relying Party: services which use provided identities; for example to access web sites or make purchases online.
 
 Contributors
