@@ -1,7 +1,7 @@
 Identity Provider use of navigator.auth
 ---------------------------------------
 
-I. Single Sign On
+I. Simple Single Sign On
 
   // First RP sign in. Code at Oauth signin URL for this IdP
   accounts = navigator.auth.getAccounts(); // -> empty array
@@ -23,7 +23,11 @@ I. Single Sign On
     }
   }
 
-II. Single Sign Out (with cooperating RPs)
+II. User Agent Delegated Single Sign On
+
+  // No network trip required.
+
+III. Single Sign Out (with cooperating RPs)
 
   // HTTP request to sign out URL; passes token or unique account identifier
   // 'idp_account_uuid' some string which the IdP uses to name the field
