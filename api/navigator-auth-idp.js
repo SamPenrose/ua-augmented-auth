@@ -5,8 +5,15 @@
  * the reading and writing of cookies holding userids and other
  * state for an account.
  *
- * TODO: define an interface for the account blob.
+ * The User Agent MUST verify that the caller of functions which view
+ * or edit user data (i.e. everything with the exception of addAccount)
+ * only does so on accounts they have created.
  */
+
+/**
+ * An IdP-specific blob, which the RP must understand well enough to handle.
+ */
+Account = {}
 
 /**
  * Return a possibly empty array of objects representing accounts with
@@ -24,20 +31,34 @@ navigator.auth.addAccount = function(accountObject) {
 }
 
 /**
+ * Sign out the account object uniquely identified by the property
+ * name, value pair passed in for the specified RP.
+ *
+ * To sign out all RPs, use deleteAccount. See there for pseudo-code,
+ * notably the firing of onSignInChanged.
+ */
+navigator.auth.signOut = function(accountIdPropertyName, accountIdValue, rpURL) {
+}
+
+/**
  * Delete the account object uniquely identified by the property
  * name, value pair passed in. Pseudo-code to implement this method:
  *
  *   var accounts = navigator.auth._accounts // returned by getAccounts();
  *   var keeping = [];
+ *   var signedOut = null;
  *   accounts.forEach(function(account) {
  *     if (account[accountIdPropertyName] !== accountIdValue) {
  *       keeping.push(account);
+ *     } else {
+ *       signedOut = account;
  *     }
  *   });
  *   if (accounts.length !== keeping.length + 1) {
  *     throw new Error("Bad key or value specifying account to delete.");
  *   }
  *   navigator.auth._accounts = keeping;
+ *   someScope.dispatchEvent('onSignInChanged', signedOut, false);
  */
 navigator.auth.deleteAccount = function(accountIdPropertyName, accountIdValue) {
 }
