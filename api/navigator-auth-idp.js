@@ -32,16 +32,6 @@ navigator.auth.addAccount = function(accountObject) {
 
 /**
  * Sign out the account object uniquely identified by the property
- * name, value pair passed in for the specified RP.
- *
- * To sign out all RPs, use deleteAccount. See there for pseudo-code,
- * notably the firing of onSignInChanged.
- */
-navigator.auth.signOut = function(accountIdPropertyName, accountIdValue, rpURL) {
-}
-
-/**
- * Delete the account object uniquely identified by the property
  * name, value pair passed in. Pseudo-code to implement this method:
  *
  *   var accounts = navigator.auth._accounts // returned by getAccounts();
@@ -58,7 +48,9 @@ navigator.auth.signOut = function(accountIdPropertyName, accountIdValue, rpURL) 
  *     throw new Error("Bad key or value specifying account to delete.");
  *   }
  *   navigator.auth._accounts = keeping;
- *   someScope.dispatchEvent('onSignInChanged', signedOut, false);
+ *
+ *   var scope = rpURL ? scopeForRP(rpURL) : scopeForAllRPs;
+ *   scope.dispatchEvent('onSignInChanged', signedOut, false);
  */
-navigator.auth.deleteAccount = function(accountIdPropertyName, accountIdValue) {
+navigator.auth.signOut = function(accountIdPropertyName, accountIdValue, rpURL=null) {
 }
