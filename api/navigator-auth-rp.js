@@ -35,3 +35,17 @@
 
 navigator.auth.authenticate = function(providerOne, providerTwo=null, ...) {
 }
+
+/**
+ * Following the chrome.identity API, an event which user agents MAY fire
+ * when the currently signed-in account is no longer signed in.
+ *
+ * There is a tension between supporting this event for sign-IN
+ * notification and conforming to Oauth's redirect URL for signin.
+ *
+ * @param accountObject: implementation-specific blob. The RP is assumed
+ *   to understand the format supported by its IdP.
+ * @param isSignedIn: bool, defaulting to false.
+ */
+onSignInChanged.addListener(function(accountObject, isSignedIn=false) {
+});
