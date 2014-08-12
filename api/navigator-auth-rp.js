@@ -47,5 +47,5 @@ navigator.auth.authenticate = function(providerOne, providerTwo=null, ...) {
  *   to understand the format supported by its IdP.
  * @param isSignedIn: bool, defaulting to false.
  */
-onSignInChanged.addListener(function(accountObject, isSignedIn=false) {
+navigator.auth.onSignInChanged.addListener(function(accountObject, isSignedIn=false) {
 });
